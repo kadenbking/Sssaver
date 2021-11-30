@@ -9,6 +9,8 @@ namespace Sssaver.ViewModels
         public SavingsPlan SavingsPlan { get; set; }
 
         public decimal TodaysSavingsAmount { get; set; }
+
+        public string CurrentProgressBounds { get; set; }
         
         public ObservableCollection<SavingsChallenge> SavingsHistory { get; set; }
 
@@ -24,8 +26,8 @@ namespace Sssaver.ViewModels
                     Name = "Viper",
                     CurrentSavingsAmount = 30,
                     TotalSavingsAmount = 100
-                };
-
+            };
+                
                 // Today's Savings Amount should be extracted from
                 // the SavingsChallenges list in the SavingsPlan.
 
@@ -33,6 +35,7 @@ namespace Sssaver.ViewModels
                 // The SavingsHistory should be loaded from the
                 // SavingsChallenges list in the SavingsPlan.
             }
+
         }
     }
 }

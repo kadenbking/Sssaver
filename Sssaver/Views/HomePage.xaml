@@ -11,44 +11,70 @@
         <ScrollView >
             <Grid Padding="16" RowSpacing="8">
 
-                <Grid Grid.Row="0"
-                      BackgroundColor="{StaticResource LightGreen}">
+                <Grid Grid.Row="0" BackgroundColor="{StaticResource LightPink}">
                     <StackLayout>
 
-                        <Label Text="Progress" FontSize="Medium" />
+                        <Label Text="Progress" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
 
-                        <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
+                        <Label Text="1700/5050" FontSize="Title" HorizontalOptions="Center" />
+
+                        <Frame HasShadow="False" HeightRequest="40" CornerRadius="12" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
+                            <AbsoluteLayout>
+                                <ContentView AbsoluteLayout.LayoutFlags="All" 
+                                             AbsoluteLayout.LayoutBounds="0,0,.33,1"
+                                             BackgroundColor="{StaticResource Primary}">
+                                    <Label Text="33%" 
+                                           FontSize="Medium" 
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center" 
+                                           TextColor="White" 
+                                           FontAttributes="Bold" />
+                                </ContentView>
+                            </AbsoluteLayout>
+                        </Frame>
+
+                        <!--<Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
 
                         <Label Text="{Binding SavingsPlan.Days}" FontSize="Large" />
 
 
                         <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontSize="Medium" />
 
-                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />
+                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />-->
 
 
                     </StackLayout>
 
                 </Grid>
 
-                <Grid Grid.Row="1"
-                      BackgroundColor="{StaticResource Secondary}">
+                <Grid Grid.Row="1" BackgroundColor="{StaticResource Secondary}">
 
-                    <Label Text="Today's Challenge" FontSize="Medium" />
+                    <StackLayout>
 
+                        <Label Text="Today's Saving Challenge" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
+
+                        <Button
+                            Text="?"
+                            Clicked="Button_Clicked"
+                            x:Name="MysteryButton"
+                            HeightRequest="100"
+                            CornerRadius="12"
+                            Margin="10"/>
+
+                        <Label Text="$75" Margin="20" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" x:Name="GoalLabel" FontSize="Title"/>
+
+                    </StackLayout>
 
                 </Grid>
 
-                <Grid Grid.Row="2"
-                      BackgroundColor="{StaticResource Tertiary}">
+                <Grid Grid.Row="2" BackgroundColor="{StaticResource Tertiary}">
 
                     <Label Text="Goal" FontSize="Medium" />
 
 
                 </Grid>
 
-                <Grid Grid.Row="3"
-                      BackgroundColor="{StaticResource White}">
+                <Grid Grid.Row="3" BackgroundColor="{StaticResource White}">
 
                     <Label Text="History" FontSize="Medium" />
 
