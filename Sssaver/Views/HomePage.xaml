@@ -2,10 +2,22 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Sssaver.ViewModels"
+    xmlns:forms="clr-namespace:Particle.Forms;assembly=Particle.Forms"
     Title="$ssaver"
     x:Class="Sssaver.Views.HomePage"
     BackgroundColor="{StaticResource White}"
     >
+
+    <ContentPage.Resources>
+        <x:Array Type="{x:Type Color}" x:Key="ConfettiColors">
+            <Color>#0074E0</Color>
+            <Color>#A2D2FF</Color>
+            <Color>#BDE0FE</Color>
+            <Color>#FF70A5</Color>
+            <Color>#FFC8DD</Color>
+            <Color>#ffffff</Color>
+        </x:Array>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
         <ScrollView >
@@ -33,14 +45,14 @@
                             </AbsoluteLayout>
                         </Frame>
 
-                        <!--<Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
+                        <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
 
                         <Label Text="{Binding SavingsPlan.Days}" FontSize="Large" />
 
 
                         <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontSize="Medium" />
 
-                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />-->
+                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />
 
 
                     </StackLayout>
@@ -49,19 +61,49 @@
 
                 <Grid Grid.Row="1" BackgroundColor="{StaticResource Secondary}">
 
+                    <forms:ParticleView x:Name="MyParticleCanvas"
+                                                    IsActive="False"
+                                                    IsRunning="True"
+                                                    HasFallingParticles="True"
+                                                    FallingParticlesPerSecond="40"
+                                                    Margin="0, 0"
+                                                    VerticalOptions="FillAndExpand"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    ParticleColors="{StaticResource ConfettiColors}"/>
+
                     <StackLayout>
 
                         <Label Text="Today's Saving Challenge" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
 
                         <Button
                             Text="?"
-                            Clicked="Button_Clicked"
+                            FontSize="Title"
+                            Clicked="Mystery_Button_Clicked"
                             x:Name="MysteryButton"
                             HeightRequest="100"
                             CornerRadius="12"
                             Margin="10"/>
 
-                        <Label Text="$75" Margin="20" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" x:Name="GoalLabel" FontSize="Title"/>
+                        <StackLayout x:Name="SaveGoalReveal" IsVisible="False">
+
+                            <Label Text="$75" Margin="20" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title"/>
+
+                            <Button
+                                Text="SAVE"
+                                FontSize="Title"
+                                Clicked="Save_Button_Clicked"
+                                HeightRequest="100"
+                                CornerRadius="12"
+                                Margin="10"/>
+
+                        </StackLayout>
+
+                        <StackLayout x:Name="GoalCompletedReveal" IsVisible="False">
+
+                            <Label Text="Congratulations!" HorizontalOptions="Center" FontSize="Title"/>
+                            <Label Text="You Saved $75!" HorizontalOptions="Center" FontSize="Large"/>
+
+                        </StackLayout>
 
                     </StackLayout>
 

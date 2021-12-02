@@ -101,6 +101,15 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png" />
+    <BundleResource Include="Resources\icon_pig.png" />
+    <BundleResource Include="Resources\icon_pig%403x.png" />
+    <BundleResource Include="Resources\icon_pig%402x.png" />
+    <BundleResource Include="Resources\icon_plan.png" />
+    <BundleResource Include="Resources\icon_plan%403x.png" />
+    <BundleResource Include="Resources\icon_plan%402x.png" />
+    <BundleResource Include="Resources\icon_profile.png" />
+    <BundleResource Include="Resources\icon_profile%403x.png" />
+    <BundleResource Include="Resources\icon_profile%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -113,6 +122,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="particle.forms">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

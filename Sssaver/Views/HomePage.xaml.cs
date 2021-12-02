@@ -16,11 +16,19 @@ namespace Sssaver.Views
             BindingContext = homeViewModel = new HomeViewModel();
         }
 
-        private async void Button_Clicked(object sender, System.EventArgs e)
+        private async void Mystery_Button_Clicked(object sender, System.EventArgs e)
         {
             await MysteryButton.FadeTo(0, 400);
             MysteryButton.IsVisible = false;
-            GoalLabel.IsVisible = true;
+            SaveGoalReveal.IsVisible = true;
+        }
+
+        private async void Save_Button_Clicked(object sender, System.EventArgs e)
+        {
+            await SaveGoalReveal.FadeTo(0, 400);
+            SaveGoalReveal.IsVisible = false;
+            GoalCompletedReveal.IsVisible = true;
+            MyParticleCanvas.IsActive = true;
         }
 
 
