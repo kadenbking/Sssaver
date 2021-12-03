@@ -19,7 +19,7 @@ namespace Sssaver.Views
         private async void Mystery_Button_Clicked(object sender, System.EventArgs e)
         {
             await MysteryButton.FadeTo(0, 400);
-            MysteryButton.IsVisible = false;
+            SaveGoalHidden.IsVisible = false;
             SaveGoalReveal.IsVisible = true;
         }
 

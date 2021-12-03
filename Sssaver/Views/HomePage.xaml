@@ -27,6 +27,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" BackgroundColor="{StaticResource LightPink}" >
@@ -37,21 +38,6 @@
                         <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" HorizontalOptions="Center" Margin="5" />
 
                         <Label Text="{Binding SavingsPlan.Progress}" FontSize="Title" HorizontalOptions="Center" Margin="5" />
-
-                        <!--<Frame HasShadow="False" HeightRequest="40" CornerRadius="12" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
-                            <AbsoluteLayout>
-                                <ContentView AbsoluteLayout.LayoutFlags="All" 
-                                             AbsoluteLayout.LayoutBounds="0,0,.3,1"
-                                             BackgroundColor="{StaticResource Primary}">
-                                    <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" 
-                                           FontSize="Medium" 
-                                           HorizontalOptions="Center" 
-                                           VerticalOptions="Center" 
-                                           TextColor="White" 
-                                           FontAttributes="Bold" />
-                                </ContentView>
-                            </AbsoluteLayout>
-                        </Frame>-->
 
                         <Frame HasShadow="False" HeightRequest="5" CornerRadius="2" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
                             <ProgressBar x:Name="ProgressBar" Progress="{Binding SavingsPlan.DecimalSavingsCompleted}"
@@ -79,14 +65,20 @@
 
                         <Label Text="Today's Saving Challenge" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
 
-                        <Button
-                            Text="?"
-                            FontSize="Title"
-                            Clicked="Mystery_Button_Clicked"
-                            x:Name="MysteryButton"
-                            HeightRequest="100"
-                            CornerRadius="12"
-                            Margin="10"/>
+                        <StackLayout x:Name="SaveGoalHidden">
+
+                            <Label Text="Find out Today's Challenge:" Margin="20" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large"/>
+
+                            <Button
+                                Text="?"
+                                FontSize="Title"
+                                Clicked="Mystery_Button_Clicked"
+                                x:Name="MysteryButton"
+                                HeightRequest="100"
+                                CornerRadius="12"
+                                Margin="10"/>
+
+                        </StackLayout>
 
                         <StackLayout x:Name="SaveGoalReveal" IsVisible="False">
 
@@ -104,7 +96,7 @@
 
                         <StackLayout x:Name="GoalCompletedReveal" IsVisible="False">
 
-                            <Label Text="Congratulations!" HorizontalOptions="Center" FontSize="Title"/>
+                            <Label Text="Congratulations!" HorizontalOptions="Center" FontSize="Title" Margin="40"/>
                             <Label Text="You Saved $30!" HorizontalOptions="Center" FontSize="Large"/>
 
                         </StackLayout>
@@ -115,14 +107,21 @@
 
                 <Grid Grid.Row="2" BackgroundColor="{StaticResource Tertiary}">
 
-                    <Label Text="Goal" FontSize="Medium" />
+                    <StackLayout>
 
+                        <Label Text="Goal" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
+
+                        <Label Text="Save to buy Mavic Drone!" HorizontalOptions="Center" Margin="10" FontSize="Large" />
+
+                        <Image Source="drone.png" Margin="20"/>
+
+                    </StackLayout>
 
                 </Grid>
 
-                <Grid Grid.Row="3" BackgroundColor="{StaticResource White}">
+                <Grid Grid.Row="3" BackgroundColor="{StaticResource Secondary}">
 
-                    <Label Text="History" FontSize="Medium" />
+                    <Label Text="History" FontSize="Medium" HorizontalOptions="Center" Margin="10"/>
 
 
                 </Grid>
