@@ -12,21 +12,20 @@ namespace Sssaver.ViewModels
 
         public string CurrentProgressBounds { get; set; }
         
-        public ObservableCollection<SavingsChallenge> SavingsHistory { get; set; }
+        
 
-        public HomeViewModel(SavingsPlan savingsPlan = null)    
+        public HomeViewModel()    
         {
-            if (savingsPlan != null)
-            {
                 // if no savingsPlan is passed into the constructor,
                 // then create one. This is for demo purposes.
-                SavingsPlan = new SavingsPlan()
-                {
-                    Days = 30,
-                    Name = "Viper",
-                    CurrentSavingsAmount = 30,
-                    TotalSavingsAmount = 100
+            SavingsPlan = new SavingsPlan()
+            {
+                Days = 30,
+                Name = "Viper Plan",
+                CurrentSavingsAmount = 30,
+                TotalSavingsAmount = 100
             };
+
                 
                 // Today's Savings Amount should be extracted from
                 // the SavingsChallenges list in the SavingsPlan.
@@ -34,7 +33,6 @@ namespace Sssaver.ViewModels
 
                 // The SavingsHistory should be loaded from the
                 // SavingsChallenges list in the SavingsPlan.
-            }
 
         }
     }

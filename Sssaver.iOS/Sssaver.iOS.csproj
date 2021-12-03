@@ -110,6 +110,7 @@
     <BundleResource Include="Resources\icon_profile.png" />
     <BundleResource Include="Resources\icon_profile%403x.png" />
     <BundleResource Include="Resources\icon_profile%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

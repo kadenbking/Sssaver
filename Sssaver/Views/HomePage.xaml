@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Sssaver.ViewModels"
     xmlns:forms="clr-namespace:Particle.Forms;assembly=Particle.Forms"
-    Title="$ssaver"
+    Title="Savr"
     x:Class="Sssaver.Views.HomePage"
     BackgroundColor="{StaticResource White}"
     >
@@ -23,19 +23,27 @@
         <ScrollView >
             <Grid Padding="16" RowSpacing="8">
 
-                <Grid Grid.Row="0" BackgroundColor="{StaticResource LightPink}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" BackgroundColor="{StaticResource LightPink}" >
                     <StackLayout>
 
-                        <Label Text="Progress" FontSize="Medium" HorizontalOptions="Center" Margin="10" />
+                        <Label Text="Progress" FontSize="Medium" HorizontalOptions="Center" Margin="5" />
 
-                        <Label Text="1700/5050" FontSize="Title" HorizontalOptions="Center" />
+                        <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" HorizontalOptions="Center" Margin="5" />
 
-                        <Frame HasShadow="False" HeightRequest="40" CornerRadius="12" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
+                        <Label Text="{Binding SavingsPlan.Progress}" FontSize="Title" HorizontalOptions="Center" Margin="5" />
+
+                        <!--<Frame HasShadow="False" HeightRequest="40" CornerRadius="12" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
                             <AbsoluteLayout>
                                 <ContentView AbsoluteLayout.LayoutFlags="All" 
-                                             AbsoluteLayout.LayoutBounds="0,0,.33,1"
+                                             AbsoluteLayout.LayoutBounds="0,0,.3,1"
                                              BackgroundColor="{StaticResource Primary}">
-                                    <Label Text="33%" 
+                                    <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" 
                                            FontSize="Medium" 
                                            HorizontalOptions="Center" 
                                            VerticalOptions="Center" 
@@ -43,17 +51,13 @@
                                            FontAttributes="Bold" />
                                 </ContentView>
                             </AbsoluteLayout>
+                        </Frame>-->
+
+                        <Frame HasShadow="False" HeightRequest="5" CornerRadius="2" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
+                            <ProgressBar x:Name="ProgressBar" Progress="{Binding SavingsPlan.DecimalSavingsCompleted}"
+                                     ProgressColor="{StaticResource Primary}"
+                                     HeightRequest="200"/>
                         </Frame>
-
-                        <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
-
-                        <Label Text="{Binding SavingsPlan.Days}" FontSize="Large" />
-
-
-                        <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontSize="Medium" />
-
-                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />
-
 
                     </StackLayout>
 
@@ -86,7 +90,7 @@
 
                         <StackLayout x:Name="SaveGoalReveal" IsVisible="False">
 
-                            <Label Text="$75" Margin="20" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title"/>
+                            <Label Text="$30" Margin="20" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title"/>
 
                             <Button
                                 Text="SAVE"
@@ -101,7 +105,7 @@
                         <StackLayout x:Name="GoalCompletedReveal" IsVisible="False">
 
                             <Label Text="Congratulations!" HorizontalOptions="Center" FontSize="Title"/>
-                            <Label Text="You Saved $75!" HorizontalOptions="Center" FontSize="Large"/>
+                            <Label Text="You Saved $30!" HorizontalOptions="Center" FontSize="Large"/>
 
                         </StackLayout>
 

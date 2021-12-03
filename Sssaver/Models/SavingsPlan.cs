@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -35,7 +36,7 @@ namespace Sssaver.Models
             }
         }
 
-        public double PercentSavingsCompleted
+        public double DecimalSavingsCompleted
         {
             get
             {
@@ -43,11 +44,28 @@ namespace Sssaver.Models
             }
         }
 
+        public string PercentSavingsCompleted
+        {
+            get
+            {
+                double percent = DecimalSavingsCompleted * 100;
+                return percent + "%";
+            }
+        }
+
+        public string Progress
+        {
+            get
+            {
+                return "$" + CurrentSavingsAmount + " / $" + TotalSavingsAmount;
+            }
+        }
+
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
 
-        public List<SavingsChallenge> SavingsChallenges { get; set; }
+        public ObservableCollection<SavingsChallenge> SavingsHistory { get; set; }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
