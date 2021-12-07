@@ -49,6 +49,11 @@ namespace Sssaver.Models
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public static implicit operator decimal(SavingsChallenge v)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

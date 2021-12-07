@@ -112,6 +112,9 @@
     <BundleResource Include="Resources\icon_profile%402x.png" />
     <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="Resources\drone.png" />
+    <BundleResource Include="Resources\mystery.png" />
+    <BundleResource Include="Resources\save.png" />
+    <BundleResource Include="Resources\congratulations.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

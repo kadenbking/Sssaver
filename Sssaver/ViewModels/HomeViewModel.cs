@@ -16,8 +16,8 @@ namespace Sssaver.ViewModels
 
         public HomeViewModel()    
         {
-                // if no savingsPlan is passed into the constructor,
-                // then create one. This is for demo purposes.
+            // if no savingsPlan is passed into the constructor,
+            // then create one. This is for demo purposes.
             SavingsPlan = new SavingsPlan()
             {
                 Days = 30,
@@ -26,13 +26,13 @@ namespace Sssaver.ViewModels
                 TotalSavingsAmount = 100
             };
 
-                
-                // Today's Savings Amount should be extracted from
-                // the SavingsChallenges list in the SavingsPlan.
+            // Today's Savings Amount should be extracted from
+            // the SavingsChallenges list in the SavingsPlan.
+            
 
-
-                // The SavingsHistory should be loaded from the
-                // SavingsChallenges list in the SavingsPlan.
+            // The SavingsHistory should be loaded from the
+            // SavingsChallenges list in the SavingsPlan.
+            
 
         }
     }

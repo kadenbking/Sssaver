@@ -31,6 +31,17 @@ namespace Sssaver.Views
             MyParticleCanvas.IsActive = true;
         }
 
+        void FutureChallengesToggler_Toggled(System.Object sender, Xamarin.Forms.ToggledEventArgs e)
+        {
+            if (FutureChallengesToggler.IsToggled == true)
+            {
+                FutureChallenges.IsVisible = true;
+            }
+            else
+            {
+                FutureChallenges.IsVisible = false;
+            }
+        }
 
     }
 }

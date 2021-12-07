@@ -16,6 +16,7 @@
                 <Button
                     BackgroundColor="{StaticResource Primary}"
                     Text="SIGN UP"
+                    FontFamily="Saira"
                     FontSize="Title"
                     HeightRequest="60"
                     CornerRadius="12"
@@ -28,6 +29,7 @@
                     TextColor="{StaticResource Primary}"
                     Text="LOGIN"
                     FontSize="Title"
+                    FontFamily="Saira"
                     HeightRequest="60"
                     CornerRadius="12"
                     Margin="50, 10"/>
