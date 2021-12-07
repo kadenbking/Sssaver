@@ -30,8 +30,8 @@ namespace Sssaver.Views
             {
                 PlanName.Text = "Fibonacci Plan";
                 PlanLength.Text = "10 Days";
-                PlanAmount.Text = "SAVE $144";
-                PlanDescribed.Text = "This is a simple savings plan designed for you to save $144 in 10 days following the Fibonacci Sequence!";
+                PlanAmount.Text = "SAVE $143";
+                PlanDescribed.Text = "This is a simple savings plan designed for you to save $143 in 10 days following the Fibonacci Sequence!";
             }
             else if(planName == "Custom")
             {

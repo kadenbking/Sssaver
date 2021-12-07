@@ -9,7 +9,6 @@ namespace Sssaver.Models
     {
         public decimal Amount { get; set; }
         public DateTime ScheudledDate { get; set; }
-        public DateTime ActualDate { get; set; }
 
         private bool isCompleted;
         //public bool IsCompleted { get; set; } = false;

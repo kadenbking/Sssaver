@@ -41,10 +41,10 @@
 
                             <Label Text="{Binding SavingsPlan.Name}" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
 
-                            <Label Text="{Binding SavingsPlan.Progress}" FontFamily="Saira" FontSize="Title" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
+                            <Label Text="{Binding SavingsPlan.PlanProgress}" FontFamily="Saira" FontSize="Title" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
 
                             <Frame HasShadow="False" HeightRequest="4" CornerRadius="2" HorizontalOptions="Fill" Padding="0" Margin="10" BackgroundColor="{StaticResource Secondary}" IsClippedToBounds="True">
-                                <ProgressBar x:Name="ProgressBar" Progress="{Binding SavingsPlan.DecimalSavingsCompleted}"
+                                <ProgressBar x:Name="ProgressBar" Progress="{Binding SavingsPlan.PercentSavingsCompleted}"
                                          ProgressColor="{StaticResource Pink}"
                                          HeightRequest="200"/>
                             </Frame>
@@ -92,15 +92,15 @@
 
                                 <StackLayout x:Name="SaveGoalReveal" IsVisible="False">
 
-                                    <Label Text="$30" Margin="20" HorizontalOptions="Center" TextColor="{StaticResource Primary}" VerticalOptions="Center" FontFamily="Saira" FontSize="Title"/>
+                                    <Label Text="{Binding TodaysSavingsAmount, StringFormat='${0}'}" Margin="20" HorizontalOptions="Center" TextColor="{StaticResource Primary}" VerticalOptions="Center" FontFamily="Saira" FontSize="Title"/>
 
-                                    <Button
-                                        Clicked="Save_Button_Clicked"
-                                        HeightRequest="200"
-                                        CornerRadius="12"
-                                        ImageSource="save.png"
-                                        Padding="10"
-                                        Margin="10"/>
+                                    <Button Command="{Binding UpdateProgress}"
+                                            Clicked="Save_Button_Clicked"
+                                            HeightRequest="200"
+                                            CornerRadius="12"
+                                            ImageSource="save.png"
+                                            Padding="10"
+                                            Margin="10"/>
 
                                 </StackLayout>
 
@@ -108,7 +108,7 @@
 
                                     <Image Source="congratulations.png" />
                                     <Label Text="You Saved:" HorizontalOptions="Center" FontFamily="Saira" TextColor="{StaticResource Primary}" FontSize="Title"/>
-                                    <Label Text="$30" HorizontalOptions="Center" FontFamily="Saira-Bold" TextColor="{StaticResource Primary}" FontSize="48" Margin="20"/>
+                                    <Label Text="{Binding TodaysSavingsAmount, StringFormat='${0}'}" HorizontalOptions="Center" FontFamily="Saira-Bold" TextColor="{StaticResource Primary}" FontSize="48" Margin="20"/>
 
                                 </StackLayout>
 
@@ -143,7 +143,22 @@
 
                     <Frame BackgroundColor="{StaticResource Secondary}" HasShadow="True" CornerRadius="12" HorizontalOptions="Fill" IsClippedToBounds="True">
 
-                        <Label Text="History" FontFamily="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="{StaticResource Primary}" Margin="10"/>
+                        <StackLayout>
+
+                            <Label Text="History" FontFamily="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="{StaticResource Primary}" Margin="10"/>
+
+                            <CollectionView ItemsSource="{Binding SavingsPlan.ChallengeHistory}" HeightRequest="300" Margin="0,10">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding ScheudledDate}" FontFamily="Saira" FontSize="Medium" HorizontalOptions="Start" TextColor="{StaticResource Primary}" />
+                                            <Label Text="{Binding Amount, StringFormat='${0}'}" FontFamily="Saira" FontSize="Medium" HorizontalOptions="EndAndExpand" TextColor="{StaticResource Primary}" />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </StackLayout>
 
                     </Frame>
 
@@ -160,7 +175,22 @@
 
                     <Frame BackgroundColor="{StaticResource Tertiary}" HasShadow="True" CornerRadius="12" HorizontalOptions="Fill" IsClippedToBounds="True">
 
-                        <Label Text="Future Savings Challenges" FontFamily="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="{StaticResource Primary}" Margin="10"/>
+                        <StackLayout>
+
+                            <Label Text="Future Savings Challenges" FontFamily="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="{StaticResource Primary}" Margin="10"/>
+
+                            <CollectionView ItemsSource="{Binding SavingsPlan.FutureChallenges}" HeightRequest="100" Margin="0,10">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding ScheudledDate}" FontFamily="Saira" FontSize="Medium" HorizontalOptions="Start" TextColor="{StaticResource Primary}" />
+                                            <Label Text="{Binding Amount, StringFormat='${0}'}" FontFamily="Saira" FontSize="Medium" HorizontalOptions="EndAndExpand" TextColor="{StaticResource Primary}" />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </StackLayout>
 
                     </Frame>
 

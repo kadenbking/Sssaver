@@ -56,7 +56,7 @@
                     <Frame BackgroundColor="{StaticResource LightPink}" HasShadow="True" CornerRadius="12" HorizontalOptions="Fill" IsClippedToBounds="True">
                         <StackLayout>
                             <Label Text="Fibonacci Plan" FontFamily="Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
-                            <Label Text="Save $144" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
+                            <Label Text="Save $143" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="10 Days" FontFamily="Saira" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
                             <Button Clicked="Fibonacci_Plan_Button_Clicked"
                                     HeightRequest="50"
