@@ -21,9 +21,9 @@ namespace Sssaver.ViewModels
             SavingsPlan = new SavingsPlan()
             {
                 Days = 30,
-                Name = "Viper Plan",
-                CurrentSavingsAmount = 30,
-                TotalSavingsAmount = 100
+                Name = "Fibonacci Plan",
+                CurrentSavingsAmount = 54,
+                TotalSavingsAmount = 144
             };
 
             // Today's Savings Amount should be extracted from
