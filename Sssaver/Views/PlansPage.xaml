@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Sssaver.Views.PlansPage"
     Title="Plans"
+    BackgroundColor="{StaticResource White}"
     >
     <ContentPage.Content>
         <ScrollView >
@@ -21,7 +22,8 @@
                             <Label Text="Traditional Plan" FontFamily="Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="Save $100" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="10 Days" FontFamily="Saira" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
-                            <Button HeightRequest="50"
+                            <Button Clicked="Traditional_Plan_Button_Clicked"
+                                    HeightRequest="50"
                                     CornerRadius="12"
                                     Text="START"
                                     FontFamily="Saira-Bold"
@@ -38,7 +40,8 @@
                             <Label Text="Royalty Plan" FontFamily="Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="Save $1000" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="30 Days" FontFamily="Saira" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
-                            <Button HeightRequest="50"
+                            <Button Clicked="Royalty_Plan_Button_Clicked"
+                                    HeightRequest="50"
                                     CornerRadius="12"
                                     Text="START"
                                     FontFamily="Saira-Bold"
@@ -55,7 +58,8 @@
                             <Label Text="Fibonacci Plan" FontFamily="Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="Save $144" FontFamily="Saira-Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="10 Days" FontFamily="Saira" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
-                            <Button HeightRequest="50"
+                            <Button Clicked="Fibonacci_Plan_Button_Clicked"
+                                    HeightRequest="50"
                                     CornerRadius="12"
                                     Text="START"
                                     FontFamily="Saira-Bold"
@@ -71,7 +75,8 @@
                         <StackLayout>
                             <Label Text="Custom Plan" FontFamily="Bold" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="5" />
                             <Label Text="Save Custom Amount" FontFamily="Saira" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Margin="0,5,0,15" />
-                            <Button HeightRequest="50"
+                            <Button Clicked="Custom_Plan_Button_Clicked"
+                                    HeightRequest="50"
                                     CornerRadius="12"
                                     Text="CREATE PLAN"
                                     FontFamily="Saira-Bold"
